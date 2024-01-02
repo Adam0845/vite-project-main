@@ -6,13 +6,32 @@ import hex3 from '../gfx/hex3.png';
 import hex4 from '../gfx/hex4.png';
 import hex5 from '../gfx/hex5.png';
 
+
 let images = [hex0, hex1, hex2, hex3, hex4, hex5];
 let level = [];
 let gamem = {
     level: level,
 };
 let selHex = [];
-
+let type = 'wall';
+document.getElementById('walls').addEventListener('click', function() {
+    type = 'wall';
+    document.getElementById('walls').style.color = "green";
+    document.getElementById('treasure').style.color = "black";
+    document.getElementById('light').style.color = "black";
+})
+document.getElementById('treasure').addEventListener('click', function() {
+    type = 'treasure';
+    document.getElementById('treasure').style.color = "green";
+    document.getElementById('light').style.color = "black";
+    document.getElementById('walls').style.color = "black";
+})
+document.getElementById('light').addEventListener('click', function() {
+    type = 'light';
+    document.getElementById('light').style.color = "green";
+    document.getElementById('treasure').style.color = "black";
+    document.getElementById('walls').style.color = "black";
+})
 class CustomDiv {
 
     constructor(w, id, x, z) {
@@ -62,7 +81,8 @@ class CustomDiv {
                         x: this.xPosition,
                         z: this.zPosition,
                         dirO: this.dirO,
-                        dirI: "startu"
+                        dirI: "start",
+                        type: type
                     }
                 } 
                 else {
@@ -77,7 +97,8 @@ class CustomDiv {
                         x: this.xPosition,
                         z: this.zPosition,
                         dirO: this.dirO,
-                        dirI: selHex[0] != this.id ? dirNS : 'startu'
+                        dirI: selHex[0] != this.id ? dirNS : 'startu',
+                        type: type
                     }
                     
 

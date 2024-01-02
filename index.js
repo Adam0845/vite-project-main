@@ -4,7 +4,7 @@ let size = 4;
 document.body.onload = function defs() {
     let x = 1;
     document.getElementById('mapa').innerHTML = "";
-    let left = 50;
+    let left = 40;
     size = document.getElementById('size').value
     gamem.size = size;
     for(let i = 0; i < size; i++)
@@ -47,6 +47,6 @@ document.getElementById('size').onchange = function changesize() {
             top += 100;
             x++;
         }
-        left += 100;
+        left += 80;
     }
  }
