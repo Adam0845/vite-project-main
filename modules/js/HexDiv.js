@@ -85,7 +85,7 @@ class CustomDiv {
                 hexa.children[0].src = images[0]
                 gamem.level.push(clickedHexa)
             }
-            document.getElementById('jsonD').innerText = JSON.stringify(gamem,null, 2);
+            document.getElementById('jsonD').innerText = JSON.stringify(gamem, null, 2);
         }
 
     }
